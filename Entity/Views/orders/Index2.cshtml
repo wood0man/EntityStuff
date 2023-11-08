@@ -30,25 +30,38 @@
     <tbody>
         
         {
+
+        @foreach(orders order in Model)
+        {
+
+
+
             <tr>
+
                 <td>
-                @Html.DisplayFor(modelItem => Model.bookid)
+                    @Html.DisplayFor(modelItem => order.bookid)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => Model.custid)
+                    @Html.DisplayFor(modelItem => order.custid)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => Model.quantity)
+                    @Html.DisplayFor(modelItem => order.quantity)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => Model.buydate)
+                    @Html.DisplayFor(modelItem => order.buydate)
                 </td>
                 <td>
-                    
-                    <a asp-action="Details" asp-route-id="@Model.Id">Details</a> 
-                    
+
+                    <a asp-action="Details" asp-route-id="order.Id">Details</a>
+
                 </td>
             </tr>
+
+
+
+
+}
+            
         }
     </tbody>
 </table>
