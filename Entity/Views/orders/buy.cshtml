@@ -1,0 +1,36 @@
+﻿@model Entity.Models.book
+
+
+<dl class="row">
+    <dt class="col-sm-2">Id</dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Id)
+    </dd>
+    <dt class="col-sm-2">Title</dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.title)
+    </dd>
+    <dt class="col-sm-2">Info</dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.info)
+    </dd>
+    <dt class="col-sm-2">Book Quantity</dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.bookquantity)
+    </dd>
+    <dt class="col-sm-2">Price</dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.price)
+    </dd>
+    <dt class="col-sm-2">Pic</dt>
+</dl>
+
+<p style="color:red">@ViewData["message"]</p>
+
+<form asp-action="buy">
+    <div class="form-group">
+        <label for="quantity" class="control-label">Quantity</label>
+        <input name="quantity" class="form-control" />
+    </div>
+    <input type="submit" value="Buy" class="btn btn-primary" />
+</form>

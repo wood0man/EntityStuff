@@ -1,0 +1,54 @@
+﻿@model Entity.Models.orders
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Customer inndex</h1>
+
+<p>
+    <a asp-action="buy">Buy</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.bookid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.custid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.buydate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.bookid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.custid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.buydate)
+                </td>
+                <td>
+                    
+                    <a asp-action="Details" asp-route-id="@Model.Id">Details</a> 
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
