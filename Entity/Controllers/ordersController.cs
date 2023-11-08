@@ -221,10 +221,26 @@ namespace Entity.Controllers
         [HttpPost]
 
         public IActionResult buy(int quantity, int bookid ) {
-
-            SqlConnection conn = new SqlConnection();
-            string sql = "";
-                
+            List<orders> orders = new List<orders>();
+            string id = HttpContext.Session.GetString("userid");
+            SqlConnection conn = new SqlConnection("Data Source=.\\sqlexpress;Initial Catalog=ziad2;Integrated Security=True;Pooling=False");
+            string sql = "select * from orders where Id='"+id+"'";
+            SqlCommand comm=new SqlCommand(sql, conn);
+            conn.Open();
+            SqlDataReader reader = comm.ExecuteReader();
+            while (reader.Read()) {
+                orders.Add(new orders
+                {
+                    Id = (int)reader["Id"],
+                    bookid=bookid,
+                    custid =(int) reader["custid"],
+                    quantity=quantity,
+                    buydate = (DateTime)reader["buydate"]
+                });
+            
+            
+            }
+            return View("index2", orders);
                 
                 }
 

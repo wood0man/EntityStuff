@@ -1,4 +1,4 @@
-﻿@model Entity.Models.orders
+﻿@model IEnumerable< Entity.Models.orders>
 
 @{
     ViewData["Title"] = "Index";
@@ -32,7 +32,7 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => Model.bookid)
+                @Html.DisplayFor(modelItem => Model.bookid)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => Model.custid)
