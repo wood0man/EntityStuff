@@ -29,6 +29,10 @@
 
 <form asp-action="buy">
     <div class="form-group">
+        
+        <input name="bookid" type="hidden" asp-for="Id" class="form-control" />
+    </div>
+    <div class="form-group">
         <label for="quantity" class="control-label">Quantity</label>
         <input name="quantity" class="form-control" />
     </div>

@@ -240,9 +240,21 @@ namespace Entity.Controllers
             
             
             }
+
+
+
+
+            int bookid1 = (int)reader["bookid"];
+            int custid1 = (int)reader["custid"];
+            int quantity1 = (int)reader["quabtity"];
+            DateTime buydate1 = (DateTime)reader["buydate"];
+
+            sql = "insert into orders (bookid,custid,quantity,buydate)values('" + bookid1 + "','"+custid1+"','"+quantity1+"','"+buydate1+"')";
+            comm.ExecuteNonQuery();
+            conn.Close();
+            reader.Close();
             return View("index2", orders);
-                
-                }
+        }
 
         
 
